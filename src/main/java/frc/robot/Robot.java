@@ -49,7 +49,7 @@ public class Robot extends TimedRobot {
   public void autonomousPeriodic() {
     // Drive for 2 seconds
     if (m_timer.get() < 2.0) {
-      m_robotDrive.arcadeDrive(0.3, 0.0); // drive forwards half speed
+      m_robotDrive.arcadeDrive(1.0, 0.0); // drive forwards half speed
     } else {
       m_robotDrive.stopMotor(); // stop robot
     }
@@ -61,7 +61,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during teleoperated mode. */
   @Override
   public void teleopPeriodic() {
-    m_robotDrive.arcadeDrive(m_stick.getLeftY()*0.3, m_stick.getLeftX()*0.3);
+    m_robotDrive.arcadeDrive(m_stick.getLeftY()*0.75, m_stick.getLeftX()*0.75);
     //m_leftDrive.set(ControlMode.PercentOutput,m_stick.getLeftY()*0.3);
     
     if (m_stick.getAButton()){
